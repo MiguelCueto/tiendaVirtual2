@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>Tienda Virtual</title>
+	</head>
+	<body>
+		{% if lista_articulos %}
+			<table border="2">
+				<tr>
+					<td>Nombre</td>
+					<td>Fecha</td>
+				</tr>
+				{% for Articulo in lista_articulos %}
+					<tr>
+						<td>{{ articulo.nombre }}</td>
+						<td>{{ articulo.fecha }}</td>
+					</tr>
+				{% endfor %}
+			</table>
+		{% else %}
+			<p>No hay Articulos</p>			
+		{% endif %}
+	</body>
+</html>

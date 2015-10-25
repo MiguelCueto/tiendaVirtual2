@@ -1,13 +1,15 @@
 from django.db import models
 
 # Create your models here.
-class ArticuloNuevo(models.Model):
+class Articulo(models.Model):
+	TIPO_CHOICES =(
+	('N','Nuevo'),
+	('U','Usado'),
+	)
 	nombre=models.CharField(max_length=50)
 	fecha=models.DateField()
 	precio=models.FloatField()
+	tipo=models.CharField(max_length=1, choices=TIPO_CHOICES)
 
-class ArticuloUsado(models.Model):
-	nombre=models.CharField(max_length=50)
-	fecha=models.DateField()
-	precio=models.FloatField()
+
 
